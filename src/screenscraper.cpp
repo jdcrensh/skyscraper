@@ -321,19 +321,33 @@ void ScreenScraper::runPasses(QList<GameEntry> &gameEntries, const QFileInfo &in
       break;
     case 2:
       if(info.size() != 0) {
-	debug.append("Tried with sha1: " + hashList.at(2) + "\n");
+	debug.append("Tried with sha1: " + hashList.at(2).toLower() + "\n");
 	debug.append("Platform: " + config->platform + "\n");
-	getSearchResults(gameEntries, "sha1=" + hashList.at(2), config->platform);
+	getSearchResults(gameEntries, "sha1=" + hashList.at(2).toLower(), config->platform);
       }
       break;
     case 3:
       if(info.size() != 0) {
-	debug.append("Tried with md5: " + hashList.at(1) + "\n");
+	debug.append("Tried with sha1: " + hashList.at(2).toUpper() + "\n");
 	debug.append("Platform: " + config->platform + "\n");
-	getSearchResults(gameEntries, "md5=" + hashList.at(1), config->platform);
+	getSearchResults(gameEntries, "sha1=" + hashList.at(2).toUpper(), config->platform);
       }
       break;
     case 4:
+      if(info.size() != 0) {
+	debug.append("Tried with md5: " + hashList.at(1).toLower() + "\n");
+	debug.append("Platform: " + config->platform + "\n");
+	getSearchResults(gameEntries, "md5=" + hashList.at(1).toLower(), config->platform);
+      }
+      break;
+    case 5:
+      if(info.size() != 0) {
+	debug.append("Tried with md5: " + hashList.at(1).toUpper() + "\n");
+	debug.append("Platform: " + config->platform + "\n");
+	getSearchResults(gameEntries, "md5=" + hashList.at(1).toUpper(), config->platform);
+      }
+      break;
+    case 6:
       debug.append("Tried with name: " + hashList.at(0) + "\n");
       debug.append("Platform: " + config->platform + "\n");
       getSearchResults(gameEntries, "romnom=" + hashList.at(0), config->platform);
