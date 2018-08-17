@@ -11,7 +11,7 @@ source VERSION
 if [ "$LATEST" != "$VERSION" ]
 then
     echo "--- Fetching Skyscraper v.${LATEST} ---"
-    wget -N https://github.com/muldjord/skyscraper/archive/${LATEST}.tar.gz
+    wget -N https://github.com/jdcrensh/skyscraper/archive/${LATEST}.tar.gz
     if [ $? != 0 ]
     then
 	exit
