@@ -309,7 +309,7 @@ void ScreenScraper::runPasses(QList<GameEntry> &gameEntries, const QFileInfo &in
 {
   QList<QString> hashList = getHashes(info);
 
-  for(int pass = 1; pass <= 4; ++pass) {
+  for(int pass = 1; pass <= 6; ++pass) {
     output.append("\033[1;35mPass " + QString::number(pass) + "\033[0m ");
     switch(pass) {
     case 1:
